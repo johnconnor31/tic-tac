@@ -1,0 +1,7 @@
+<h3>Name:     <%=@game.name %></h3>
+<h3>Company:  <%=@game.from %></h3>
+<h3>Review:   <%=@game.review %></h3>
+<h1></h1>
+
+<%=link_to 'edit',edit_game_path(@game)%>
+<%= link_to 'delete', game_path(@game), method: :delete ,data:{confirm: "Are you sure to delete?"} %>

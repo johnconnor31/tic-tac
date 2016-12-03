@@ -1,0 +1,6 @@
+<%= simple_form_for @game do |f|%>
+<%= f.input :name, label:'Game Name'%>
+<%= f.input :from, label:'company'%>
+<%= f.input :review, label:'comments'%>
+<%= f.submit 'Add game', url:'ps4/create'%>
+<% end%>

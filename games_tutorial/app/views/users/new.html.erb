@@ -1,0 +1,22 @@
+<div align="center">Sign Up
+<%= form_for @user  do |f|%>
+<div id='errors'>
+    <% if @user.errors.any?%>
+    <% for message in @user.errors.full_messages%>
+    <div><%= message%></div>
+    <%end%>
+    <%end%>
+</div>
+<div><%=f.label :name%> <br/>  
+<%= f.text_field :name%>
+</div>
+<div><%=f.label :password%> <br/>  
+<%= f.password_field :password%>
+</div>
+<div><%=f.label :password_confirmation%> <br/>  
+<%= f.password_field :password_confirmation%>
+</div>
+<div><%= f.submit 'Sign Up'%></div>
+  <%end%>
+
+  </div>

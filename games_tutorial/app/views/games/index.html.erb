@@ -1,0 +1,10 @@
+<% @games.each do |game|%>
+<h3>Name:     <%=game.name %></h3>
+<h3>Company:  <%=game.from %></h3>
+<h3>Review:   <%=game.review %></h3>
+<div><img src= <%=@gravatar%>/> <%= time_ago_in_words game.created_at%> ago</div>
+<div><%=link_to 'view Images', 'view_game'%></div>
+<h1></h1>
+<% end%>
+
+<%=link_to 'addgame',"games/new"%>
