@@ -1,17 +1,19 @@
 class UsersController < ApplicationController
-def new
-    @user= User.new
+  def index
   end
-def create
-  @user= User.new(i_params)
-  if @user.save
-    flash.now.alert = 'Signed up!'
-    redirect_to log_in_url
-  else
-    render log_in_url
+  def new
+  	@user=User.new
   end
-end
-private def i_params
-  params.require(@user).permit(:name,:password)
-end
+  def create
+  	@user= User.new(user_params)
+  	if @user.save
+      flash.now.alert = 'Signed up!'
+  		redirect_to log_in_url, :notice => 'Signed up!' 
+  	else
+  		render 'new'
+  	end
+  end
+	private def user_params
+	params.require(:user).permit(:name,:password)
+	end
 end

@@ -4,16 +4,16 @@ before_action :findById, only: [:show,:edit,:update,:destroy]
 def create
 	@game= Game.new(game_params)
 	if @game.save
-		redirect_to root_path
+		flash.now.alert='Game created successfully'
+		redirect_to root_path, :notice => 'Game created successfully'
 	else
+		flash.now.alert='Game creation failed'
 		render 'new'
 	end
 end
 def new 
 	@game= Game.new
 end
-
-	
 def show
   	
 end

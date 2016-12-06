@@ -11,6 +11,11 @@
 </head>
 <body>
 <%= render 'layouts/header'%>
+<%= render 'layouts/game_form'%>
+<div align="center"><%flash.each do |name,msg|%>
+  <%=msg%>
+<%end%>
+</div>
 <%= yield %>
 
 </body>

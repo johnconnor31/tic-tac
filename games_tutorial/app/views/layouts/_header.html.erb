@@ -9,7 +9,6 @@
         <span class="icon-bar"></span>
       </button>
     </div>
-
     <!-- Collect the nav links, forms, and other content for toggling -->
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
     <%if current_user %>
@@ -23,6 +22,11 @@
       <li class="active"><a href=<%=sign_up_path%>>Sign up <span class="sr-only">(current)</span></a></li>
       </ul>
       <%end%>
+      <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+      <ul class="nav navbar-nav navbar-right">
+        <li><form><a href="#" class="btn btn-success navbar-btn btn-sm" style='background-color: orange;border-color: white'data-toggle="modal" data-target="#new-question-modal">Add Game</a></form></li>
+      </ul>
+    </div>
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav>
