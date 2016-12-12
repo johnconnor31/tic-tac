@@ -5,7 +5,7 @@ def create
 	@game= Game.new(game_params)
 	if @game.save
 		flash.now.alert='Game created successfully'
-		redirect_to root_path, :notice => 'Game created successfully'
+		redirect_to games_all_path, :notice => 'Game created successfully'
 	else
 		flash.now.alert='Game creation failed'
 		render 'new'
