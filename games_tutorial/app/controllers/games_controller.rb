@@ -15,7 +15,6 @@ def new
 	@game= Game.new
 end
 def show
-  	
 end
 def edit
 end

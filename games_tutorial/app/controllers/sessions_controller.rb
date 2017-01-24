@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
     user = User.authenticate(params[:name],params[:password])
     if user!=nil
       session[:name] = user.name 
-      redirect_to sign_up_url, :notice => user.password_hash
+      redirect_to root_path
     else
       flash.now.alert = "login failed"
       render 'new'

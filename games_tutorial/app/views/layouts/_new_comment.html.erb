@@ -5,17 +5,17 @@
         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
         <h4 class="modal-title">Comment</h4>
       </div>
-      <%= form_for @comment, url: '/comments', html: { class: 'form-horizontal' } do %>
+      <%= form_for :userComment, url: '/comments', html: { class: 'form-horizontal' } do %>
         <div class="modal-body">
           <div class="form-group">
             <label for="comment" class="col-sm-2 control-label">Comment</label>
             <div class="col-sm-10">
-              <textarea class="form-control" name="@comment.body"  placeholder="Type something?" required></textarea>
+              <textarea class="form-control" name="userComment[body]"  placeholder="Type something?" required></textarea>
             </div>
           </div>
         </div>
-          <input type='hidden' name= 'userComment[id]' value=<%=@game.id%> />
-          <input type='hidden' name= 'userComment[name]' value=<%=current_user%> />
+          <input type='hidden' name= 'userComment[game_id]' value=<%=@game.id%> />
+          <input type='hidden' name= 'userComment[email]' value=<%=current_user%> />
         <div class="modal-footer">
           <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
           <button type="submit" class="btn btn-primary">Submit</button>

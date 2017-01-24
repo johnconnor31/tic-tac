@@ -1,20 +1,16 @@
 class CommentsController < ApplicationController
-  def create 
-    comment = Comment.new(comment_user)
-    if comment.save
-    redirect_to game_path(@game)
-    else
-      redirect_to game_path(@game) , :notice => 'error in adding comment'
-    end
-  end
-  def destroy
-  end
-  def edit
-  end
+def create
+  @game = Game.find(user_comment[:game_id])
+  @game.comments.create(user_comment)
+
+    redirect_to @game
+end
   def show
-  end
-  private def comment_user
-    params.require(:userComment).permit("id","name","body")
-  end
-  
+    Array @comments_array = Comment.find_by_q_id(params[:id])
+    render 'games/show' 
+  end  
+
+private def user_comment
+  params.require(:userComment).permit(:game_id,:email,:body)
+end
 end
