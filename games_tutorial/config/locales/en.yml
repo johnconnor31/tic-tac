@@ -21,3 +21,6 @@
 
 en:
   hello: "Hello world"
+  main_mailer:
+    notify_game_creator:
+      subject: "You have a new comment on your game"
