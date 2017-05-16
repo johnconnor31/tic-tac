@@ -1,5 +1,0 @@
-<%= form_for @user, url: {action: "create",controller:'user'},html:{class:'form_control'} do |f| %>
-  <div>User Name:<%= f.text_field :name %></div>
-  <div>Password:<%= f.password_field :password %></div>
-  <div><%= f.submit "Login" %></div>
-<% end %>
